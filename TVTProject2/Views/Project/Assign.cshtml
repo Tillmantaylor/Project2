@@ -1,0 +1,33 @@
+﻿@model TVTProject2.Models.ViewModels.AssignPersonVM
+
+@{
+    ViewData["Title"] = "Assign";
+}
+
+<h1>Assign</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.People)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.MiddleName) @Html.DisplayFor(modelItem => item.Lastname)
+                </td>
+                <td>
+                    <a asp-action="AssignPerson" asp-route-id="@item.Id" asp-route-projectId="@Model.ProjectId">Assign</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Details" asp-route-id="@Model.ProjectId">Back to Project Details</a>
+
