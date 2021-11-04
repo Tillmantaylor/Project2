@@ -17,7 +17,6 @@ namespace TVTProject2.Models.Entities
         public DateTime StartDate { get; set; }
         [Required]
         public DateTime DueDate { get; set; }
-        public ICollection<ProjectRole> ProjectRoles { get; set; }
-            = new List<ProjectRole>();
+        public ICollection<ProjectRole> ProjectRoles { get; set; } = new List<ProjectRole>();
     }
 }

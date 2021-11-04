@@ -15,6 +15,5 @@ namespace TVTProject2.Models.Entities
         public string Name { get; set; }
         [StringLength(450)]
         public string Description { get; set; }
-        public int ProjectRoleId { get; set; }
     }
 }

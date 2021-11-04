@@ -7493,19 +7493,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Taylor Tillman.DESKTOP-JBROIEH\\.nuget\\packages\\": {}
+    "C:\\Users\\Jake\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Taylor Tillman.DESKTOP-JBROIEH\\source\\repos\\TVTProject2\\TVTProject2\\TVTProject2.csproj",
+      "projectUniqueName": "C:\\Users\\Jake\\source\\repos\\Project2\\TVTProject2\\TVTProject2.csproj",
       "projectName": "TVTProject2",
-      "projectPath": "C:\\Users\\Taylor Tillman.DESKTOP-JBROIEH\\source\\repos\\TVTProject2\\TVTProject2\\TVTProject2.csproj",
-      "packagesPath": "C:\\Users\\Taylor Tillman.DESKTOP-JBROIEH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Taylor Tillman.DESKTOP-JBROIEH\\source\\repos\\TVTProject2\\TVTProject2\\obj\\",
+      "projectPath": "C:\\Users\\Jake\\source\\repos\\Project2\\TVTProject2\\TVTProject2.csproj",
+      "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jake\\source\\repos\\Project2\\TVTProject2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Taylor Tillman.DESKTOP-JBROIEH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7574,7 +7574,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

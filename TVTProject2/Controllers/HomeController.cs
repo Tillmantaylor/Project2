@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,20 +12,31 @@ using TVTProject2.Services;
 
 namespace TVTProject2.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IApplicationUserRepository _userRepo;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public HomeController(ILogger<HomeController> logger, IApplicationUserRepository userRepo)
+        public HomeController(
+            ILogger<HomeController> logger, 
+            IApplicationUserRepository userRepo, 
+            SignInManager<ApplicationUser> signInManager,
+            UserManager<ApplicationUser> userManager)
         {
             _logger = logger;
             _userRepo = userRepo;
+            _signInManager = signInManager;
+            _userManager = userManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var user = await _userManager.FindByNameAsync("Proman");
+
+            var result = await _signInManager.PasswordSignInAsync(user, "Admin1!", false, false);
+
             return View();
         }
 
@@ -39,16 +51,10 @@ namespace TVTProject2.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public async Task<IActionResult> GetUserId()
+        public int GetUserId()
         {
-            var user = await _userRepo.ReadAsync(User.Identity.Name);
-            return Content(user.Id);
+            return _userRepo.ReadAsync(User.Identity.Name).Id;
+
         }
-      
-        public async Task<IActionResult> AssignUserToRole()
-        {
-            await _userRepo.AssignUserToRoleAsync("guard@gmail.com", "ProjectManager");
-            return Content("Assigned 'guard@gmail.com' to role ProjectManager");
-        }       
     }
 }

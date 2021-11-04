@@ -20,10 +20,6 @@ namespace TVTProject2.Models.Entities
         public string Lastname { get; set; }
         [Required]
         public string Email { get; set; }
-        public ICollection<ProjectRole> ProjectRoles { get; set; }
-        public Person()
-        {
-            ProjectRoles = new List<ProjectRole>();
-        }
+        public ICollection<ProjectRole> ProjectRoles { get; set; } = new List<ProjectRole>();
     }
 }

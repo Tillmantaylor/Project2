@@ -11,6 +11,7 @@ namespace TVTProject2.Services
         ICollection<Project> ReadAll();
         Project Create(Project project);
         Project Read(int id);
+        Task<Project> ReadAsync(int id);
         void Update(int oldId, Project project);
         void Delete(int id);
     }

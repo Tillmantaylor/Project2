@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,6 +32,11 @@ namespace TVTProject2.Services
             _db.ProjectRoles.Add(projectRole);
             _db.SaveChanges();
             return projectRole;
+        }
+
+        public async Task<ICollection<ProjectRole>> ReadAllByProjectIdAsync(int projectId)
+        {
+            return await _db.ProjectRoles.Where(projectRole => projectRole.ProjectId == projectId).ToListAsync();
         }
     }
 }

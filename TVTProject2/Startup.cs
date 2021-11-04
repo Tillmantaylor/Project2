@@ -43,6 +43,7 @@ namespace TVTProject2
             services.AddScoped<IProjectRepository, DbProjectRepository>();
             services.AddScoped<IProjectRoleRepository, DbProjectRoleRepository>();
             services.AddScoped<IAppRoleRepository, DbAppRoleRepository>();
+            services.AddScoped<Initializer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

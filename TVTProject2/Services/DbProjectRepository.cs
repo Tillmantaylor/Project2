@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,6 +39,11 @@ namespace TVTProject2.Services
         {
             return _db.Projects
                 .ToList();
+        }
+
+        public async Task<Project> ReadAsync(int id)
+        {
+            return await _db.Projects.FindAsync(id);
         }
 
         public void Update(int oldId, Project project)

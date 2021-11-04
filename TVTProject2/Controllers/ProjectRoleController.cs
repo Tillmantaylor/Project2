@@ -17,7 +17,7 @@ namespace TVTProject2.Controllers
         {
             _projectRoleRepo = projectRoleRepo;
         }
-        [Authorize(Roles = "ProjectManager")]
+        [Authorize(Roles = "Project Manager")]
         public IActionResult Index()
         {
             var allProjectRoles = _projectRoleRepo.ReadAll();

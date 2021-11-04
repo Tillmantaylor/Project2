@@ -21,6 +21,12 @@ namespace TVTProject2.Services
             return appRole;
         }
 
+        public async Task CreateAsync(AppRole appRole)
+        {
+            await _db.AppRoles.AddAsync(appRole);
+            await _db.SaveChangesAsync();
+        }
+
         public void Delete(int id)
         {
             var appRoleToDelete = Read(id);
@@ -37,6 +43,11 @@ namespace TVTProject2.Services
         {
             return _db.AppRoles
                 .ToList();
+        }
+
+        public AppRole ReadByName(string name)
+        {
+            return _db.AppRoles.FirstOrDefault(role => role.Name == name);
         }
 
         public void Update(int oldId, AppRole appRole)

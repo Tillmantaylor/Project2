@@ -235,9 +235,6 @@ namespace TVTProject2.Data.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<int>("ProjectRoleId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("AppRoles");
@@ -377,21 +374,17 @@ namespace TVTProject2.Data.Migrations
 
             modelBuilder.Entity("TVTProject2.Models.Entities.ProjectRole", b =>
                 {
-                    b.HasOne("TVTProject2.Models.Entities.Person", "Person")
+                    b.HasOne("TVTProject2.Models.Entities.Person", null)
                         .WithMany("ProjectRoles")
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TVTProject2.Models.Entities.Project", "Project")
+                    b.HasOne("TVTProject2.Models.Entities.Project", null)
                         .WithMany("ProjectRoles")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Person");
-
-                    b.Navigation("Project");
                 });
 
             modelBuilder.Entity("TVTProject2.Models.Entities.Person", b =>
