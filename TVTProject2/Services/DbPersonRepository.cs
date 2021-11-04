@@ -40,11 +40,6 @@ namespace TVTProject2.Services
                 .ToList();
         }
 
-        public ICollection<Person> ReadAllProjId(int projectId)
-        {
-            return _db.People.AsEnumerable().Where(person => person.ProjectRoles.Where(project => project.ProjectId != projectId) != null)
-                .ToList();
-        }
 
         public void Update(int oldId, Person person)
         {
@@ -53,14 +48,6 @@ namespace TVTProject2.Services
             personToUpdate.MiddleName = person.MiddleName;
             personToUpdate.Lastname = person.Lastname;
             personToUpdate.Email = person.Email;
-            _db.SaveChanges();
-        }
-
-        public void AddProjectRoles(ProjectRole projectRole, int id)
-        {
-            var personToUpdate = Read(id);
-            _db.ProjectRoles.Add(projectRole);
-            personToUpdate.ProjectRoles.Add(projectRole);
             _db.SaveChanges();
         }
     }

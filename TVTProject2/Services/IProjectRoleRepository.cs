@@ -9,6 +9,7 @@ namespace TVTProject2.Services
     public interface IProjectRoleRepository
     {
         ICollection<ProjectRole> ReadAll();
+        Task<ICollection<ProjectRole>> ReadAllByProjectIdAsync(int projectId);
         ProjectRole Read(int id);
         ProjectRole Create(ProjectRole projectRole);
     }

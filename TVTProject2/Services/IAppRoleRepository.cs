@@ -10,7 +10,9 @@ namespace TVTProject2.Services
     {
         ICollection<AppRole> ReadAll();
         AppRole Create(AppRole appRole);
+        Task CreateAsync(AppRole appRole);
         AppRole Read(int id);
+        AppRole ReadByName(string name);
         void Update(int oldId, AppRole appRole);
         void Delete(int id);
     }

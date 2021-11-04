@@ -11,14 +11,15 @@ namespace TVTProject2.Models.Entities
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+
         [Range(8, 100)]
         [Column(TypeName = "decimal(18,4")]
         public decimal HourlyRate { get; set; }
+        [ForeignKey("PersonId")]
         public int PersonId { get; set; }
-        public Person Person { get; set; }
+        [ForeignKey("ProjectId")]
         public int ProjectId { get; set; }
-        public Project Project { get; set; }
+        [ForeignKey("AppRoleId")]
         public int AppRoleId { get; set; }
     }
 }

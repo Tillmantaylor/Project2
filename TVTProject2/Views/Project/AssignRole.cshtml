@@ -1,0 +1,41 @@
+﻿@model TVTProject2.Models.ViewModels.AssignRoleVM
+
+@{
+    ViewData["Title"] = "Assign Role";
+}
+
+<h1>
+    Assign Role to Person
+</h1>
+
+<div>
+    <div class="d-flex flex-column mb-4">
+        <span class="mb-2">Project Name: @Model.ProjectName</span>
+        <span>Person's Name: @Model.PersonName</span>
+    </div>
+    <form asp-action="AssignRole">
+        <input type="hidden" asp-for="ProjectId" value="@Model.ProjectId" />
+        <input type="hidden" asp-for="PersonId" value="@Model.PersonId" />
+        <div class="form-group">
+            <select name="Role">
+                <option value="">Available Roles</option>
+                @foreach (var item in Model.AssignRoleOptions)
+                {
+                    <option value="@item.Name">@item.Name</option>
+                }
+            </select>
+        </div>
+        <div class="form-group w-25">
+            <label asp-for="HourlyRate" class="control-label"></label>
+            <input asp-for="HourlyRate" class="form-control" value="8" />
+            <span asp-validation-for="HourlyRate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Assign" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Details" asp-route-id="@Model.ProjectId">Back to Project Details</a>
+</div>

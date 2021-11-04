@@ -1,4 +1,4 @@
-﻿@model TVTProject2.Models.Entities.Project
+﻿@model TVTProject2.Models.ViewModels.ProjectDetailsVM
 
 @{
     ViewData["Title"] = "Details";
@@ -18,6 +18,9 @@
                 <input asp-for="Name" class="form-control" readonly/>
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+            <div>
+                <span>Number of People assigned to this project: @Model.Count</span>
+            </div>
             <div class="form-group">
                 <label asp-for="StartDate" class="control-label"></label>
                 <input asp-for="StartDate" class="form-control" readonly/>
@@ -28,15 +31,39 @@
                 <input asp-for="DueDate" class="form-control" readonly/>
                 <span asp-validation-for="DueDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div>
+                <span>Days until Project is due: @Model.ProjectDue</span>
+            </div>
+            <div>
+                @foreach (var item in Model.People)
+                {
+                    <div class="flex-column d-flex pt-2">
+                        <div class="d-flex flex-column">
+                            <span>Name: @item.Name</span>
+                            <div>
+                                <a asp-action="AssignRole" asp-route-projectId="@item.ProjectId" asp-route-personId="@item.PersonId" class="border-right border-dark pr-1">Assign Role</a>
+                                <a asp-action="RemoveRole" asp-route-projectId="@item.ProjectId" asp-route-personId="@item.PersonId" class="border-right border-dark pr-1">Remove Role</a>
+                                <a asp-action="RemovePerson" asp-route-projectId="@item.ProjectId" asp-route-personId="@item.PersonId">Remove from project</a>
+                            </div>
+                        </div>
+                        <span>Number of Roles: @item.projectRoles.Count()</span>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            @foreach(var role in item.projectRoles)
+                            {
+                                <span>@role</span>
+                            }
+                        </div>
+                    </div>
+                }
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Assign" asp-route-id="@Model.ProjectId">Assign Person</a>
+    <a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit Project</a>
+    <a asp-action="Index">Back to Project List</a>
 </div>
 
 @section Scripts {
