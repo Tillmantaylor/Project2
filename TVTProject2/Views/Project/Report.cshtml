@@ -1,0 +1,28 @@
+﻿@model TVTProject2.Models.ViewModels.ProjectReportVM
+
+@{
+    ViewData["Title"] = "Report";
+}
+
+@foreach(var project in Model.Projects)
+{
+    <div class="d-flex flex-column">
+        <h3>@project.Name</h3>
+        <h4>Number of people: @project.People.Count()</h4>
+        <h4>Total Project Rate: @project.TotalHourlyRate</h4>
+        <div>
+            @foreach(var person in project.People)
+            {
+                <div>
+                    <span class="pr-2 border-right border-dark">@person.Name</span>
+                    <span class="pr-2 border-right border-dark">Role: @person.RoleName</span>
+                    <span>Hourly Rate: @person.HourlyRate</span>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to Home Page</a>
+</div>

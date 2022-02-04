@@ -1,25 +1,42 @@
-﻿using System;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Project:        Project2
+//  File Name:      TVTProject2.cs
+//  Description:    Project Manager
+//  Course:         CSCI-3110-001
+//  Author:         Taylor Tillman, tillmant@etsu.edu
+//  Created:        Saturday, November 6, 2021
+//  Copyright:      Taylor Tillman, 2021
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
+using TVTProject2.Models.Entities;
 
 namespace TVTProject2.Models.ViewModels
 {
+    /// <summary>
+    /// project report view model
+    /// </summary>
     public class ProjectReportVM
     {
-        [DisplayName("Project Name")]
-        public string ProjectName { get; set; }
-        [DisplayName("Number of People")]
-        public int NumberOfPeople { get; set; }
-        [DisplayName("Total Hourly Rate")]
-        public decimal TotalHourlyRate { get; set; }
-        [DisplayName("Person")]
-        public string FullName { get; set; }
-        [DisplayName("Project Role")]
-        public string Role { get; set; }
-        [DisplayName("Hourly Rate")]
-        public decimal HourlyRate { get; set; }
+        public IEnumerable<ProjectMetadata> Projects { get; set; }
+    }
 
+    public class ProjectMetadata
+    {
+        public string Name { get; set; }
+        public decimal TotalHourlyRate { get; set; }
+        public IEnumerable<PersonMetadata> People { get; set; }
+    }
+
+    public class PersonMetadata
+    {
+        public string Name { get; set; }
+        public string RoleName { get; set; }
+        public decimal HourlyRate { get; set; }
     }
 }

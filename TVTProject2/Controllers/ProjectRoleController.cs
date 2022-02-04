@@ -1,4 +1,15 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Project:        Project2
+//  File Name:      TVTProject2.cs
+//  Description:    Project Manager
+//  Course:         CSCI-3110-001
+//  Author:         Taylor Tillman, tillmant@etsu.edu
+//  Created:        Saturday, November 6, 2021
+//  Copyright:      Taylor Tillman, 2021
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,10 +24,18 @@ namespace TVTProject2.Controllers
     public class ProjectRoleController : Controller
     {
         private readonly IProjectRoleRepository _projectRoleRepo;
+
+        /// <summary>
+        /// Injects repository
+        /// </summary>
         public ProjectRoleController(IProjectRoleRepository projectRoleRepo)
         {
             _projectRoleRepo = projectRoleRepo;
         }
+
+        /// <summary>
+        /// Index showing basic information about project roles
+        /// </summary>
         [Authorize(Roles = "Project Manager")]
         public IActionResult Index()
         {
@@ -32,6 +51,5 @@ namespace TVTProject2.Controllers
             });
             return View(model);
         }
-
     }
 }

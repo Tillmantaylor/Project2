@@ -1,3 +1,14 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Project:        Project2
+//  File Name:      TVTProject2.cs
+//  Description:    Project Manager
+//  Course:         CSCI-3110-001
+//  Author:         Taylor Tillman, tillmant@etsu.edu
+//  Created:        Saturday, November 6, 2021
+//  Copyright:      Taylor Tillman, 2021
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,8 +22,14 @@ using TVTProject2.Services;
 
 namespace TVTProject2
 {
+    /// <summary>
+    /// Used to help run the program
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// Seeds Database
+        /// </summary>
         public static async Task Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
@@ -20,6 +37,9 @@ namespace TVTProject2
             host.Run();
         }
 
+        /// <summary>
+        /// Creates a host
+        /// </summary>
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
@@ -27,6 +47,9 @@ namespace TVTProject2
                     webBuilder.UseStartup<Startup>();
                 });
 
+        /// <summary>
+        /// Seeds the roles into the database
+        /// </summary>
         public static async Task SeedDataAsync(IHost host)
         {
             using var scope = host.Services.CreateScope();

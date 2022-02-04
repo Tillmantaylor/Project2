@@ -1,3 +1,14 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Project:        Project2
+//  File Name:      TVTProject2.cs
+//  Description:    Project Manager
+//  Course:         CSCI-3110-001
+//  Author:         Taylor Tillman, tillmant@etsu.edu
+//  Created:        Saturday, November 6, 2021
+//  Copyright:      Taylor Tillman, 2021
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -16,13 +27,22 @@ using TVTProject2.Services;
 
 namespace TVTProject2
 {
+    /// <summary>
+    /// Used to help run the program
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Configuration
+        /// </summary>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Configuration
+        /// </summary>
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -77,8 +97,15 @@ namespace TVTProject2
                     name: "default",
                     pattern: "{controller=Project}/{action=assign}/{projectId?}");
                 endpoints.MapControllerRoute(
-                    name: "defualt",
-                    pattern: "{controller=Project}/{action=assignperson}/{id?}/{projectId}");
+                    name: "default",
+                    pattern: "{controller=Project}/{action=assignperson}/{id?}/{projectId?}");
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Person}/{action=assignrole}/{projectId?}/{personId?}");
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Project}/{action=removeperson}/{projectId?}/{personId?}");
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Person}/{action=removerole}/{projectId?}/{personId?}");
                 endpoints.MapRazorPages();
             });
         }

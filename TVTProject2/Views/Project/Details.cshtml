@@ -41,8 +41,8 @@
                         <div class="d-flex flex-column">
                             <span>Name: @item.Name</span>
                             <div>
-                                <a asp-action="AssignRole" asp-route-projectId="@item.ProjectId" asp-route-personId="@item.PersonId" class="border-right border-dark pr-1">Assign Role</a>
-                                <a asp-action="RemoveRole" asp-route-projectId="@item.ProjectId" asp-route-personId="@item.PersonId" class="border-right border-dark pr-1">Remove Role</a>
+                                <a asp-controller="Person" asp-action="AssignRole" asp-route-projectId="@item.ProjectId" asp-route-personId="@item.PersonId" class="border-right border-dark pr-1">Assign Role</a>
+                                <a asp-controller="Person" asp-action="RemoveRole" asp-route-projectId="@item.ProjectId" asp-route-personId="@item.PersonId" class="border-right border-dark pr-1">Remove Role</a>
                                 <a asp-action="RemovePerson" asp-route-projectId="@item.ProjectId" asp-route-personId="@item.PersonId">Remove from project</a>
                             </div>
                         </div>
@@ -61,8 +61,8 @@
 </div>
 
 <div>
-    <a asp-action="Assign" asp-route-id="@Model.ProjectId">Assign Person</a>
-    <a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit Project</a>
+    <a asp-action="Assign" asp-route-id="@Model.ProjectId" class="border-right border-dark pr-1">Assign Person</a>
+    <a asp-action="Edit" asp-route-id="@Model.ProjectId" class="border-right border-dark pr-1">Edit Project</a>
     <a asp-action="Index">Back to Project List</a>
 </div>
 

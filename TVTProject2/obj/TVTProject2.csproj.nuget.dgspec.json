@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jake\\source\\repos\\Project2\\TVTProject2\\TVTProject2.csproj": {}
+    "C:\\Users\\Jake\\Source\\Repos\\Project2\\TVTProject2\\TVTProject2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jake\\source\\repos\\Project2\\TVTProject2\\TVTProject2.csproj": {
+    "C:\\Users\\Jake\\Source\\Repos\\Project2\\TVTProject2\\TVTProject2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jake\\source\\repos\\Project2\\TVTProject2\\TVTProject2.csproj",
+        "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Project2\\TVTProject2\\TVTProject2.csproj",
         "projectName": "TVTProject2",
-        "projectPath": "C:\\Users\\Jake\\source\\repos\\Project2\\TVTProject2\\TVTProject2.csproj",
+        "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Project2\\TVTProject2\\TVTProject2.csproj",
         "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jake\\source\\repos\\Project2\\TVTProject2\\obj\\",
+        "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Project2\\TVTProject2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",

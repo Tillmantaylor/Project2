@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace TVTProject2.Services
 {
+    /// <summary>
+    /// Interface for application user
+    /// </summary>
     public interface IApplicationUserRepository
     {
         ApplicationUser Read(string userName);

@@ -350,4 +350,8 @@ C:\Users\Jake\source\repos\Project2\TVTProject2\bin\Debug\net5.0\runtimes\win\li
 C:\Users\Jake\source\repos\Project2\TVTProject2\obj\Debug\net5.0\TVTProject2.Views.pdb
 C:\Users\Jake\source\repos\Project2\TVTProject2\obj\Debug\net5.0\TVTProject2.csproj.CopyComplete
 C:\Users\Jake\source\repos\Project2\TVTProject2\obj\Debug\net5.0\TVTProject2.genruntimeconfig.cache
-C:\Users\Jake\source\repos\Project2\TVTProject2\obj\Debug\net5.0\Razor\Views\Project\AssignRole.cshtml.g.cs
+C:\Users\Jake\Source\Repos\Project2\TVTProject2\obj\Debug\net5.0\Razor\Views\Project\RemovePerson.cshtml.g.cs
+C:\Users\Jake\Source\Repos\Project2\TVTProject2\obj\Debug\net5.0\Razor\Views\Person\AssignRole.cshtml.g.cs
+C:\Users\Jake\Source\Repos\Project2\TVTProject2\obj\Debug\net5.0\Razor\Views\Person\RemoveRole.cshtml.g.cs
+C:\Users\Jake\Source\Repos\Project2\TVTProject2\obj\Debug\net5.0\Razor\Views\Project\Report.cshtml.g.cs
+C:\Users\Jake\Source\Repos\Project2\TVTProject2\obj\Debug\net5.0\Razor\Views\Person\Report.cshtml.g.cs
